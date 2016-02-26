@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ZSJApplePay_ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIWindow * Window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    Window.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0f];
+    ZSJApplePay_ViewController * ApplePay = [[ZSJApplePay_ViewController alloc]init];
+    UINavigationController * AppleNav = [[UINavigationController alloc]initWithRootViewController:ApplePay];
+    self.window.rootViewController = AppleNav;
+    [self.window makeKeyWindow];
     return YES;
 }
 
